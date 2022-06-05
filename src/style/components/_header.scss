@@ -1,0 +1,136 @@
+@use '../utils/variables' as *;
+@use '../utils/mixin' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid $color-text;
+  padding: 20px 0;
+  width: 100%;
+  z-index: 5;
+  background: $color-secondary;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-img {
+  width: 35px;
+  height: 35px;
+  margin-right: $margin;
+}
+
+.header__logo-text {
+  font-size: $text-large;
+}
+
+.header__group {
+  display: flex;
+  align-items: center;
+}
+
+.header__cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: calc($margin * 2);
+  cursor: pointer;
+  font-size: $text-litle;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: 1s border-color;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $color-primary;
+    transition: border-color 1s;
+  }
+}
+
+.header__cart-icon {
+  margin-left: $margin-mini;
+  transition: border-color 0.5s;
+  padding-bottom: 2px;
+  fill: $color-text;
+  @include icon;
+}
+
+.header__cart:hover .header__cart-icon,
+.header__cart:focus .header__cart-icon {
+  animation: swaying 1.5s infinite linear;
+}
+
+@keyframes swaying {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(7deg);
+  }
+  75% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.header__count {
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+  color: $color-secondary;
+  line-height: 0;
+  border-radius: 50%;
+  background: $color-primary;
+  font-size: $text-very-litle;
+  @include flex-center;
+  @include icon;
+}
+
+.header__balance {
+  font-size: $text-litle;
+}
+
+.header__balance-text {
+  color: $color-primary;
+}
+
+.header__change-theme {
+  cursor: pointer;
+  outline: none;
+  margin-left: $margin;
+  fill: $color-text;
+  @include icon;
+
+  &:focus-visible {
+    outline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__inner {
+    flex-direction: column;
+  }
+
+  .header__logo {
+    margin-bottom: $margin;
+  }
+
+  .header__cart-text {
+    display: none;
+  }
+
+  .header__cart:focus,
+  .header__cart:hover {
+    border-bottom: 1px solid transparent;
+  }
+}

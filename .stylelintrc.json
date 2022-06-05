@@ -1,0 +1,17 @@
+{
+  "plugins": ["stylelint-scss"],
+
+  "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
+  "rules": {
+    "scss/selector-no-redundant-nesting-selector": true,
+    "declaration-colon-newline-after": null,
+    "value-list-comma-newline-after": null,
+    "rule-empty-line-before": null,
+    "string-quotes": "single",
+    "selector-class-pattern": null,
+    "alpha-value-notation": null,
+    "font-family-name-quotes": null,
+    "color-function-notation": null,
+    "at-rule-empty-line-before": null
+  }
+}

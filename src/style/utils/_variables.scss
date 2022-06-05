@@ -1,0 +1,39 @@
+:root {
+  --color-text: #05386b;
+  --color-secondary: #fdf5f1;
+  --color-primary: #5cdb95;
+  --color-gray: gray;
+  --color-danger: #e63946;
+  --text-very-litle: 14px;
+  --text-book-name: 16px;
+  --text-litle: 18px;
+  --text-main: 24px;
+  --text-large: 36px;
+  --text-xxl: 76px;
+  --margin: 15px;
+  --margin-mini: 5px;
+}
+
+[theme='light'] {
+  --color-secondary: #fdf5f1;
+  --color-text: #05386b;
+}
+
+[theme='dark'] {
+  --color-secondary: #0d1117;
+  --color-text: #fdf5f1;
+}
+
+$color-text: var(--color-text);
+$color-secondary: var(--color-secondary);
+$color-primary: var(--color-primary);
+$color-gray: var(--color-gray);
+$color-danger: var(--color-danger);
+$text-book-name: var(--text-book-name);
+$text-very-litle: var(--text-very-litle);
+$text-litle: var(--text-litle);
+$text-main: var(--text-main);
+$text-large: var(--text-large);
+$text-xxl: var(--text-xxl);
+$margin: var(--margin);
+$margin-mini: var(--margin-mini);

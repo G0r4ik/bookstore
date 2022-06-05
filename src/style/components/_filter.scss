@@ -1,0 +1,139 @@
+@use '../utils/variables' as *;
+@use '../utils/mixin' as *;
+
+.filter__search {
+  background: none;
+  outline: none;
+  border: 1px solid $color-text;
+  width: 100%;
+  color: $color-text;
+  padding: 5px 3px;
+  margin-top: $margin;
+  border-radius: 15px;
+  height: 40px;
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.09) 0 2px 8px 0;
+}
+
+.search__input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  color: $color-text;
+}
+
+.search__icon {
+  fill: $color-text;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.filter {
+  margin-bottom: calc($margin * 3);
+  margin-top: $margin;
+  padding-top: 100px;
+}
+
+.filter__group {
+  display: flex;
+  align-items: center;
+  margin-top: $margin;
+}
+
+.filter__select-text {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.filter__select-text-c {
+  border-bottom: 1px solid $color-primary;
+}
+
+.filter__category-list {
+  display: none;
+  list-style: none;
+  border-radius: 20px;
+  border: 1px solid $color-text;
+  padding: 15px;
+  position: absolute;
+  z-index: 2;
+  background: $color-secondary;
+
+  &_visibly {
+    display: block;
+  }
+}
+
+.filter__category-item {
+  margin-bottom: $margin-mini;
+  cursor: pointer;
+  border-bottom: 1px solid $color-text;
+  padding: 5px;
+  font-size: $text-litle;
+
+  &_active {
+    border-bottom: 1px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $color-primary;
+  }
+}
+
+.filter__price {
+  display: flex;
+  align-items: center;
+  outline: none;
+  margin-right: calc($margin * 3);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: auto;
+  }
+}
+
+.filter__price-text {
+  padding: 5px;
+}
+
+.filter__arrow {
+  fill: $color-text;
+  transition: transform 0.2s linear;
+}
+
+@media (max-width: 768px) {
+  .filter {
+    padding-top: 125px;
+    padding-bottom: 30px;
+    margin-bottom: $margin-mini;
+  }
+
+  .filter__group {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: $text-litle;
+  }
+
+  .filter__price,
+  .filter__select {
+    padding: 5px 10px;
+    padding-bottom: 0;
+  }
+
+  .filter__price {
+    margin-right: 0;
+    margin-bottom: $margin;
+  }
+
+  .filter__arrow {
+    @include icon;
+  }
+
+  .filter__category-item {
+    font-size: $text-very-litle;
+    margin-bottom: $margin-mini;
+  }
+}
